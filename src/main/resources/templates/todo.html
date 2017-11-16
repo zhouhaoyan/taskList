@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"><!--首先要写该html标签-->
+<head>
+    <meta charset="utf-8">
+    <title>TODO_LIST</title>
+    <!-- 引入 Bootstrap -->
+    <!--<link th:href="@{http://apps.bdimg.com/libs/bootstrap/3.3.0/css/bootstrap.min.css}" rel="stylesheet">-->
+    <link th:href="@{css/bootstrap.css}" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url(image/1.jpg);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+
+        .container {
+            max-width: 720px;
+        }
+
+        .checkbox {
+            margin-right: 12px;
+            margin-bottom: 0;
+        }
+
+        .done > .checkbox > label > span {
+            text-decoration: line-through;
+        }
+
+        .private_hover:hover {
+            text-decoration: line-through;
+
+        }
+
+        hr {
+            margin-top:8px;
+            margin-bottom: 8px;
+            size: 20px;
+        }
+
+
+    </style>
+</head>
+<body>
+<div class="container">
+    <header>
+        <h1 class="display-3">TODO LIST</h1>
+        <hr>
+    </header>
+    <!-- 内容部分-->
+    <section ng-controller="maincontroller">
+        <!--为了实现好看的界面，所以用了表单控制-->
+        <div class="input-group input-group-lg">
+            <input type="text" class="form-control" id="des_id" name="">
+            <span class="input-group-btn">
+                    <button class="btn btn-secondary" id="add_btn">Add</button>
+                </span>
+        </div>
+        <ul class="list-group " style="padding:12px;" id="content_id">
+
+        </ul>
+        <p>
+            共 <strong id="size"></strong>
+            个任务
+        </p>
+    </section>
+</div>
+</body>
+<script th:src="@{js/jquery-1.9.1.min.js}"></script>
+<script th:src="@{js/todo.js}"></script>
+</html>
